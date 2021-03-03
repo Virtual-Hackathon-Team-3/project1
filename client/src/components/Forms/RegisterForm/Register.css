@@ -1,0 +1,26 @@
+.register-form-container {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.signup-form {
+  width: 60%;
+  margin: 2rem auto;
+}
+.signup-form-row {
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+.signup-form button {
+  margin-top: 4rem;
+  width: 150px;
+}
+.signup-form .MuiInputBase-input {
+  width: 250px;
+}

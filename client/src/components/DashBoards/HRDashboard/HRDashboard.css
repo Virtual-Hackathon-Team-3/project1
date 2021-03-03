@@ -1,0 +1,56 @@
+.hr-topcards {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-card-title {
+  font-family: rajdhani;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2f54eb;
+  text-transform: uppercase;
+}
+.top-card-number {
+  font-size: 40px;
+  font-family: rajdhani;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.top-card-text-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.job-selection {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+.job-selection-titles {
+  margin: 1rem 0;
+  text-align: left;
+  margin-left: 1rem;
+  margin-bottom: -2px;
+  color: #061178;
+}
+.posts-available-card {
+  width: 300px;
+}
+
+.applicants-available-card {
+  width: 400px;
+}
+.applicants-title-container {
+  margin-top: 1rem;
+}
+.applicants-title-container img {
+  width: 60px;
+}
+.applicant-details-container {
+  text-align: left;
+  padding: 1rem;
+  padding-top: 0;
+}

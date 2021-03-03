@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   makeStyles,
   useTheme,
@@ -13,6 +13,7 @@ import {
   Drawer,
   Divider,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 import WorkIcon from "@material-ui/icons/Work";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
@@ -21,6 +22,11 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
 import "./DashBoards.css";
+
+import HRDashBoard from "./HRDashboard/HRDashboard";
+import PostJob from "./PostJob/PostJob";
+
+import JobPosts from "./JobPosts/JobPosts";
 
 const drawerWidth = 240;
 
@@ -54,25 +60,47 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
   },
 }));
 
 function ResponsiveDrawer() {
   const classes = useStyles();
-  const theme = useTheme();
+  const history = useHistory();
+
+  const accountType = localStorage.getItem("hack-accountType");
+
+  const [listItem, setListItem] = useState(
+    accountType === "hr" ? "Dashboard" : "Jobs For You"
+  );
+  const drawerItems =
+    accountType === "hr"
+      ? [
+          { itemText: "Dashboard", route: "/dashboard" },
+          { itemText: "Post a Job", route: "/post-job" },
+        ]
+      : [
+          { itemText: "Jobs For You", route: "/job-posts" },
+          { itemText: "Your Profile", route: "/applicant-profile" },
+        ];
 
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {["Jobs For You", "Your Profile"].map((text, index) => (
-          <ListItem button key={text}>
+        {drawerItems.map((text, index) => (
+          <ListItem
+            button
+            key={text}
+            onClick={() => {
+              setListItem(text.itemText);
+              history.push(text.route);
+            }}
+          >
             <ListItemIcon>
               {index % 2 === 0 ? <WorkIcon /> : <AccountBoxIcon />}
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={text.itemText} />
           </ListItem>
         ))}
       </List>
@@ -86,11 +114,15 @@ function ResponsiveDrawer() {
           <AppBar position="fixed" className={classes.appBar} elevation={2}>
             <Toolbar>
               <div className="navbar-flex-container">
-                <div className="nav-notification-item">
-                  <IconButton>
-                    <NotificationsIcon />
-                  </IconButton>
-                </div>
+                {accountType === "hr" ? (
+                  ""
+                ) : (
+                  <div className="nav-notification-item">
+                    <IconButton>
+                      <NotificationsIcon />
+                    </IconButton>
+                  </div>
+                )}
                 <div>
                   <IconButton size="small">
                     <AccountCircleIcon />
@@ -113,7 +145,14 @@ function ResponsiveDrawer() {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <h1> Demo </h1>
+        <div
+          style={{ background: "#fafafa", padding: "2rem", height: "100vh" }}
+        >
+          {listItem === "Dashboard" && <HRDashBoard />}
+          {listItem === "Post a Job" && <PostJob />}
+
+          {listItem === "Jobs For You" && <JobPosts />}
+        </div>
       </main>
     </div>
   );

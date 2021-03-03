@@ -1,0 +1,23 @@
+.jobposts-card {
+  width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.jobposts-inner-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+.jobposts-inner-flex-container p {
+  margin: 0;
+  font-weight: bold;
+  font-family: rajdhani;
+}
+.jobposts-inner-flex-container h5 {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-family: rajdhani;
+  letter-spacing: 1px;
+  color: #757575;
+}

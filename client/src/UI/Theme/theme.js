@@ -17,6 +17,10 @@ export default createMuiTheme({
       main: red2,
       contrastText: "#fff",
     },
+    tertiary: {
+      main: "#fff",
+      contrastText: "red",
+    },
   },
 
   typography: {

@@ -1,0 +1,31 @@
+.login-form-page {
+  height: 100vh;
+}
+.login-form-container {
+  width: 400px;
+  height: 300px;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.login-form-title {
+  font-family: rajdhani;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.login-form-subtitle {
+  margin-top: 0;
+  font-size: 12px;
+}
+.login-register-text {
+  font-size: 12px;
+}
