@@ -1,7 +1,7 @@
 import { createMuiTheme } from "@material-ui/core";
 
-const red1 = "#ff0800";
-const red2 = "#ff0800";
+const red1 = "#061178";
+const red2 = "#2f54eb";
 
 export default createMuiTheme({
   palette: {

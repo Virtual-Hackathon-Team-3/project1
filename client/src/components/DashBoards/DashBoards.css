@@ -1,0 +1,15 @@
+.navbar-flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav-name {
+  color: black;
+  font-family: rajdhani;
+  font-weight: 600;
+}
+.nav-notification-item {
+  border-left: solid 1px #c3c7cc;
+  border-right: solid 1px #c3c7cc;
+}

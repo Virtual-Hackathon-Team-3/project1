@@ -6,6 +6,7 @@ import "./App.css";
 import theme from "./UI/Theme/theme";
 
 import LoginForm from "./components/Forms/LoginForm/LoginForm";
+import DashBoards from "./components/DashBoards/Dashboards";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <Switch>
             <Route exact path="/" component={LoginForm} />
+            <Route exact path="/dashboard" component={DashBoards} />
           </Switch>
         </ThemeProvider>
       </Router>
